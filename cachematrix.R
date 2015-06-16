@@ -1,9 +1,12 @@
-## This function will build a 'class' which can calculate the inverse of
-## a matrix. After the calculation the result will be cached in the object / list
-## Afterwards, the object can be called an the first time the inverse will be
-## calculated. Second call, the result is retrived from cache.
+## --------------------------------------------------------------------------------
+## COURSERA - R PROGRAMMING (rprog15)
+## Assignment 2 - June 16th 2015
+## --------------------------------------------------------------------------------
 
 ## Make the matrix class structure
+## This function will build a 'class' which can calculate the inverse of
+## a matrix. After the calculation the result will be cached in the object / list
+## This object type is input to the method 'cacheSolve'
 makeCacheMatrix <- function(x = matrix()) {
 
   sm <- NULL
@@ -20,8 +23,10 @@ makeCacheMatrix <- function(x = matrix()) {
   
 }
 
-
-## Calculate the inverse matrix - if not cached
+## This methods calculate the inverse matrix
+## The x-matrix should be based on the class "makeCacheMatrix" which supports
+## caching of the calculation. If the result is already present in cache return
+## that. If not calculate it using the solce-method
 cacheSolve <- function(x, ...) {
         
   sm <- x$getsolved()
